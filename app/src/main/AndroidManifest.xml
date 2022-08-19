@@ -14,7 +14,10 @@
         android:theme="@style/Theme.NotificationDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ACSecond"
+            android:exported="false" />
+        <activity
+            android:name=".ACMain"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
