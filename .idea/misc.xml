@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Furkan/AndroidProjects/NotificationDemo/app/src/main/res/layout/ac_details.xml" value="0.34601449275362317" />
+        <entry key="..\:/Furkan/AndroidProjects/NotificationDemo/app/src/main/res/layout/ac_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Furkan/AndroidProjects/NotificationDemo/app/src/main/res/layout/ac_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/Furkan/AndroidProjects/NotificationDemo/app/src/main/res/layout/ac_settings.xml" value="0.34601449275362317" />
         <entry key="..\:/Furkan/AndroidProjects/NotificationDemo/app/src/main/res/layout/activity_main.xml" value="0.34601449275362317" />
       </map>
     </option>

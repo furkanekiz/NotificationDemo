@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ACSecond">
+    tools:context=".ACSettings">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvAcSecond"
+        android:id="@+id/tvAcSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Activity" />
-
+        android:text="Settings Activity" />
 </LinearLayout>
