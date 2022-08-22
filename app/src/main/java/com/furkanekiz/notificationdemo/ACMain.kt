@@ -10,12 +10,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import androidx.core.app.RemoteInput
 import kotlinx.android.synthetic.main.ac_main.*
 
 class ACMain : AppCompatActivity() {
 
     private val channelID = "com.furkanekiz.notificationdemo.channel1"
     private var notificationManager: NotificationManager? = null
+    private val KEY_REPLY = "key_reply"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,13 +34,23 @@ class ACMain : AppCompatActivity() {
     @SuppressLint("UnspecifiedImmutableFlag")
     private fun displayNotification() {
         val notificationId = 45
+
         val tapResultIntent = Intent(this, ACSecond::class.java)
         val pendingIntent: PendingIntent = PendingIntent.getActivity(
             this,
             0,
             tapResultIntent,
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_MUTABLE
         )
+
+        //reply action
+        val remoteInput: RemoteInput = RemoteInput.Builder(KEY_REPLY).run {
+            setLabel("Insert you name here")
+            build()
+        }
+
+        val replyAction: NotificationCompat.Action =
+            NotificationCompat.Action.Builder(0, "REPLY", pendingIntent).addRemoteInput(remoteInput).build()
 
         //action button 1
         val intent2 = Intent(this, ACDetails::class.java)
@@ -69,9 +81,10 @@ class ACMain : AppCompatActivity() {
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setContentIntent(pendingIntent)
+            //.setContentIntent(pendingIntent)
             .addAction(action2)
             .addAction(action3)
+            .addAction(replyAction)
             .build()
         notificationManager?.notify(notificationId, notification)
     }
